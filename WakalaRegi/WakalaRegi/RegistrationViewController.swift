@@ -187,7 +187,7 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
         } else if(txtContactNumber.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter conatct number"
         } else if(txtLoaction.text!.trimmingCharacters(in: .whitespaces).count <= 0){
-            strMessage = "Please select location"
+            strMessage = "Please enter location"
         } else if(txtbeneficiaryName.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter Beneficiary Name"
         }
@@ -232,6 +232,7 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
         wakala.beneficiary_name = txtbeneficiaryName.text
         wakala.device_id =  UIDevice.current.identifierForVendor!.uuidString
         wakala.device_type = "ios"
+        wakala.freelancer_id = AccountManager.instance().activeAccount?.freelancer_id
         if(btnId.isSelected == true){
             if let imageData = idImage.jpeg(.lowest) {
                 wakala.idImage = imageData

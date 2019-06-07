@@ -73,7 +73,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="HVz-iT-SWr"/>
                                     </connections>
@@ -96,7 +96,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E75-aJ-DvO">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E75-aJ-DvO">
                                     <rect key="frame" x="15" y="470" width="345" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="1hx-Ny-i9I"/>
@@ -121,7 +121,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="tnI-F0-BfA"/>
                                     </connections>
@@ -142,7 +142,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="aRY-fH-rnp"/>
                                     </connections>
@@ -163,7 +163,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bank account number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-o4-klZ">
                                     <rect key="frame" x="15" y="220" width="345" height="40"/>

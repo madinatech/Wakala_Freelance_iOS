@@ -26,6 +26,7 @@ class Account: NSObject ,NSCoding {
     var bank_ifsc : String = ""
     var wakala_id : String = ""
     var image_before_url : String = ""
+    var freelancer_id : String = ""
     
     let ENCODING_VERSION:Int = 1
     
@@ -45,6 +46,7 @@ class Account: NSObject ,NSCoding {
         aCoder.encode(bank_account_number, forKey: "bank_account_number");
         aCoder.encode(bank_name, forKey: "bank_name");
         aCoder.encode(bank_ifsc, forKey: "bank_ifsc");
+         aCoder.encode(freelancer_id, forKey: "freelancer_id");
        
     }
     
@@ -62,6 +64,7 @@ class Account: NSObject ,NSCoding {
             bank_account_number = aDecoder.decodeObject(forKey: "bank_account_number") as! String;
             bank_name = aDecoder.decodeObject(forKey: "bank_name") as! String;
             bank_ifsc = aDecoder.decodeObject(forKey: "bank_ifsc") as! String;
+            freelancer_id = aDecoder.decodeObject(forKey: "freelancer_id") as! String;
         }
     }
     
@@ -69,6 +72,9 @@ class Account: NSObject ,NSCoding {
         
         if let str = userDict.value(forKey: "mobile_number") as? String{
             self.mobileNumber = str
+        }
+        if let str = userDict.value(forKey: "freelancer_id") as? String{
+            self.freelancer_id = str
         }
     
         if let str = userDict.value(forKey: "email") as? String{
@@ -125,8 +131,8 @@ class Account: NSObject ,NSCoding {
         
         request.setParameter(mobileNumber, forKey: "mobile_number")
         request.setParameter(password, forKey: "passcode")
-        request.setParameter("fdssdgdfgdfgdfg", forKey: "device_id")
-        request.setParameter("android", forKey: "device_type")
+        request.setParameter(deviceID, forKey: "device_id")//fdssdgdfgdfgdfg
+        request.setParameter("ios", forKey: "device_type")//android
         request.startRequest()
     }
 }

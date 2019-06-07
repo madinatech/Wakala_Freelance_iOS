@@ -80,6 +80,7 @@ open class WakalaList: _WakalaList {
         request.setParameter(beneficiary_name ?? "", forKey: "beneficiary_name")
         request.setParameter(bank_account_number ?? "", forKey: "bank_account_number")
         request.setParameter(email ?? "", forKey: "email")
+        request.setParameter(freelancer_id ?? "", forKey: "created_by")
         if(idImage != nil){
             request.idImageData = idImage!
             request.isIdImageData = true

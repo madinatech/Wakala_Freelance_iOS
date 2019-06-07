@@ -58,13 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WakalaRegi/Model/CoreData/UserClasses/WakalaList.swift"
-            timestampString = "581584443.3661751"
+            timestampString = "581596760.739452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "registerWakala(block:)"
-            landmarkType = "7">
+            startingLineNumber = "107"
+            endingLineNumber = "107">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

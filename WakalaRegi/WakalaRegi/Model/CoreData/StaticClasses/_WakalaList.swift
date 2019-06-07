@@ -20,6 +20,7 @@ public enum WakalaListAttributes: String {
     case device_id = "device_id"
     case device_type = "device_type"
     case email = "email"
+    case freelancer_id = "freelancer_id"
     case idImage = "idImage"
     case image_before_url = "image_before_url"
     case licenceImage = "licenceImage"
@@ -110,6 +111,9 @@ open class _WakalaList: NSManagedObject {
 
     @NSManaged open
     var email: String?
+
+    @NSManaged open
+    var freelancer_id: String?
 
     @NSManaged open
     var idImage: Data?
