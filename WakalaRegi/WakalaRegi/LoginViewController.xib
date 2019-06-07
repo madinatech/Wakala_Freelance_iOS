@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CIRCULARSTD-MEDIUM.OTF">
+            <string>CircularStd-Medium</string>
+        </array>
+        <array key="FAKTPRO-NORMAL.TTF">
+            <string>FaktPro-Normal</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="WakalaRegi" customModuleProvider="target">
+            <connections>
+                <outlet property="txtPassword" destination="goH-dH-I7S" id="UfX-aY-4Cc"/>
+                <outlet property="txtUsername" destination="dC5-BR-QNz" id="QGn-9I-AaZ"/>
+                <outlet property="view" destination="vjC-4x-TQ6" id="Mjl-eB-BQh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vjC-4x-TQ6">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-BR-QNz">
+                    <rect key="frame" x="20" y="227" width="335" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="cBg-HJ-5z9"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="FaktPro-Normal" family="Fakt Pro" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ugp-R5-ZYR"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bu-er-jPi">
+                    <rect key="frame" x="315" y="216" width="20" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.2122938368" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="goH-dH-I7S">
+                    <rect key="frame" x="20" y="287" width="335" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="mnO-7J-hUG"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="FaktPro-Normal" family="Fakt Pro" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="xKe-Bv-0Tq"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-So-17A">
+                    <rect key="frame" x="40" y="377" width="295" height="55"/>
+                    <color key="backgroundColor" red="0.95164185759999997" green="0.50074929000000001" blue="0.4589707851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="Y8s-kU-G3Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="CircularStd-Medium" family="Circular Std" pointSize="20"/>
+                    <color key="tintColor" red="0.0" green="0.43529411759999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Login"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginClicked:" destination="-1" eventType="touchUpInside" id="fWj-Ys-bsb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpn-9p-xZy">
+                    <rect key="frame" x="142.5" y="80" width="90" height="90"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="585-bE-F1e"/>
+                        <constraint firstAttribute="height" constant="90" id="dAx-Po-VIA"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="Wakala_iPhone"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ev1-So-17A" firstAttribute="top" secondItem="goH-dH-I7S" secondAttribute="bottom" constant="50" id="2dP-1M-0b4"/>
+                <constraint firstItem="dC5-BR-QNz" firstAttribute="top" secondItem="wpn-9p-xZy" secondAttribute="bottom" constant="57" id="Gcb-hl-Ob5"/>
+                <constraint firstItem="wpn-9p-xZy" firstAttribute="centerX" secondItem="vjC-4x-TQ6" secondAttribute="centerX" id="QOQ-ia-9dK"/>
+                <constraint firstItem="goH-dH-I7S" firstAttribute="top" secondItem="dC5-BR-QNz" secondAttribute="bottom" constant="20" id="UdO-Ad-lgx"/>
+                <constraint firstItem="wpn-9p-xZy" firstAttribute="top" secondItem="XEc-eo-FBc" secondAttribute="top" constant="60" id="Z91-3Q-d33"/>
+                <constraint firstItem="ev1-So-17A" firstAttribute="leading" secondItem="XEc-eo-FBc" secondAttribute="leading" constant="40" id="bs1-Dz-Lui"/>
+                <constraint firstItem="XEc-eo-FBc" firstAttribute="trailing" secondItem="ev1-So-17A" secondAttribute="trailing" constant="40" id="f9Q-ee-UmB"/>
+                <constraint firstItem="goH-dH-I7S" firstAttribute="leading" secondItem="XEc-eo-FBc" secondAttribute="leading" constant="20" id="fE1-Yi-Bjc"/>
+                <constraint firstItem="XEc-eo-FBc" firstAttribute="trailing" secondItem="dC5-BR-QNz" secondAttribute="trailing" constant="20" id="m2I-My-arf"/>
+                <constraint firstItem="dC5-BR-QNz" firstAttribute="leading" secondItem="XEc-eo-FBc" secondAttribute="leading" constant="20" id="rh3-0f-tVx"/>
+                <constraint firstItem="XEc-eo-FBc" firstAttribute="trailing" secondItem="goH-dH-I7S" secondAttribute="trailing" constant="20" id="umz-g9-AZF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="XEc-eo-FBc"/>
+            <point key="canvasLocation" x="24.637681159420293" y="51.358695652173914"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Wakala_iPhone" width="341" height="341"/>
+    </resources>
+</document>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bank" representedClassName="Bank" syncable="YES">
+        <attribute name="bank_display_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bank_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bank_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="City" representedClassName="City" syncable="YES">
+        <attribute name="city_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WakalaList" representedClassName="WakalaList" syncable="YES">
+        <attribute name="activation_key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="agreementImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="bank_account_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bank_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bank_ifsc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bank_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="beneficiary_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="buisness_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contact_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contact_person" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="device_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="device_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="image_before_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="licenceImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modified" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="permitImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="pin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reference_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tinData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="wakala_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Bank" positionX="-36" positionY="153" width="128" height="90"/>
+        <element name="City" positionX="-54" positionY="144" width="128" height="75"/>
+        <element name="WakalaList" positionX="-63" positionY="-18" width="128" height="480"/>
+    </elements>
+</model>
