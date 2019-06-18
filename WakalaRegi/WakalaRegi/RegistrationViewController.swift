@@ -20,6 +20,7 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     @IBOutlet weak var txtContactNumber: UITextField!
     @IBOutlet weak var txtLoaction: UITextField!
     @IBOutlet weak var txtbeneficiaryName: UITextField!
+    @IBOutlet weak var txtConfirmPin: UITextField!
     
     @IBOutlet weak var btnId: UIButton!
     @IBOutlet weak var btnTin: UIButton!
@@ -178,6 +179,8 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
             strMessage = "Please enter wakala name"
         } else if(txtMobileNumber.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter mobile number"
+        } else if(txtMobileNumber.text!.trimmingCharacters(in: .whitespaces).count < 12){
+            strMessage = "Please enter valid mobile number"
         } else if(txtbank.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please select bank"
         }else if(txtbeneficiaryName.text!.trimmingCharacters(in: .whitespaces).count <= 0){
@@ -188,14 +191,18 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
             strMessage = "Please enter contact person"
         } else if(txtContactNumber.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter conatct number"
-        }else if(txtCity.text!.trimmingCharacters(in: .whitespaces).count <= 0){
+        } else if(txtContactNumber.text!.trimmingCharacters(in: .whitespaces).count < 12){
+            strMessage = "Please enter valid conatct number"
+        } else if(txtCity.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please select city"
         }  else if(txtLoaction.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter street address"
-        }else if(txtPin.text!.trimmingCharacters(in: .whitespaces).count <= 0){
+        } else if(txtPin.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter PIN"
         } else if(txtPin.text!.trimmingCharacters(in: .whitespaces).count < 4){
             strMessage = "Pin should be minimum 4 and maximum 8 digits"
+        } else if(txtPin.text != txtConfirmPin.text){
+            strMessage = "Pin and confirm pin is not matched"
         }
         
        if(txtEmail.text!.trimmingCharacters(in: .whitespaces).count > 0){

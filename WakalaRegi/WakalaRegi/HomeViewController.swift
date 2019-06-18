@@ -47,6 +47,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell?.selectionStyle = .none
         let wakalList = wakalaListArray[indexPath.row]
         cell?.lblTitle.text = wakalList.name
+        cell?.lblDate.text = Utils.getDatetime(wakalList.created_Date!)
         cell?.btnView.tag = indexPath.row
         cell?.btnView.addTarget(self, action: #selector(viewClicked(_:)), for: .touchUpInside)
         return cell!
@@ -71,7 +72,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func logoutClicked(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Logout", message: "Are you sure want to logout?",         preferredStyle: .alert)
+        let alert = UIAlertController(title: "Logout", message: "Logging out will loose your submitted wakala data. Are you sure you want to continue logging out?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { _ in
         }))

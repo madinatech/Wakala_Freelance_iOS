@@ -17,6 +17,7 @@ public enum WakalaListAttributes: String {
     case contact_number = "contact_number"
     case contact_person = "contact_person"
     case created = "created"
+    case created_Date = "created_Date"
     case device_id = "device_id"
     case device_type = "device_type"
     case email = "email"
@@ -102,6 +103,9 @@ open class _WakalaList: NSManagedObject {
 
     @NSManaged open
     var created: String?
+
+    @NSManaged open
+    var created_Date: Date?
 
     @NSManaged open
     var device_id: String?

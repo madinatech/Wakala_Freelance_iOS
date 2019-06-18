@@ -54,7 +54,10 @@ open class WakalaList: _WakalaList {
                     let dataArray = request.serverData["data"] as! [[String : Any]]
                     if(dataArray.count > 0){
                         let dataDict = dataArray[0]
-                        _ =  FEMDeserializer.object(fromRepresentation: dataDict, mapping: WakalaList.defaultMapping(), context: localContext)
+                        var newDict = [String: Any]()
+                        newDict = dataDict
+                        newDict["created_Date"] = Date()
+                        _ =  FEMDeserializer.object(fromRepresentation: newDict, mapping: WakalaList.defaultMapping(), context: localContext)
                     } else {
                           self.itemLoadedBlock([],"")
                     }

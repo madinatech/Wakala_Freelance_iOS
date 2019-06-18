@@ -76,6 +76,51 @@ class Utils: NSObject {
         return Platform.isSimulator
     }
     
+    class func getDatetime(_ date : Date) -> String {
+         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"
+        return dateFormatter.string(from: date)
+    }
+    
+    class func getDateFromDatetime(_ dateString : String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
+        
+        let Date24 = dateFormatter.string(from: date!)
+        var currentDate = UTCToLocal(date: Date24)
+        if(date == nil) {
+            currentDate = ""
+        }
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let date1 : Date = dateFormatter.date (from: currentDate)!
+        
+        
+     
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"
+        return dateFormatter.string(from: date1)
+        
+//        return date1!
+    }
+    
+    class func UTCToLocal(date:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let dt = dateFormatter.date(from: date)
+        //dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
+        
+        return dateFormatter.string(from: dt!)
+    }
+    
+    
     class func setBottomBorderForTextField(txtField: UITextField) {
         let border = CALayer()
         let width = CGFloat(1.0)
