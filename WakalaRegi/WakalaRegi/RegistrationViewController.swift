@@ -27,6 +27,12 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     @IBOutlet weak var btnPermit: UIButton!
     @IBOutlet weak var btnAgreement: UIButton!
     
+    @IBOutlet weak var imgId: UIImageView!
+     @IBOutlet weak var imgTin: UIImageView!
+     @IBOutlet weak var imgLicence: UIImageView!
+     @IBOutlet weak var imgPermit: UIImageView!
+     @IBOutlet weak var imgAgreement: UIImageView!
+    
     var idImage = UIImage()
      var tinImage = UIImage()
      var licenceImage = UIImage()
@@ -124,9 +130,6 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
         } else{
             Utils.showAlert(withMessage: "You don't have camera")
         }
-        
-        
-        
     }
     
     func openGallary() {
@@ -142,18 +145,23 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
             if(self.selectedButtonTag == 100){
                 self.btnId.isSelected = true
                 self.idImage = image as! UIImage
+                self.imgId.image = image as? UIImage
             } else if(self.selectedButtonTag == 200){
                 self.btnTin.isSelected = true
                  self.tinImage = image as! UIImage
+                self.imgTin.image = image as? UIImage
             }  else if(self.selectedButtonTag == 300){
                 self.btnLicence.isSelected = true
                  self.licenceImage = image as! UIImage
+                self.imgLicence.image = image as? UIImage
             } else if(self.selectedButtonTag == 400){
                 self.btnPermit.isSelected = true
                  self.permitImage = image as! UIImage
+                self.imgPermit.image = image as? UIImage
             } else if(self.selectedButtonTag == 500){
                 self.btnAgreement.isSelected = true
                  self.agreementImage = image as! UIImage
+                self.imgAgreement.image = image as? UIImage
             }
         }
     }
@@ -167,29 +175,33 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
        
         
         if(txtName.text!.trimmingCharacters(in: .whitespaces).count <= 0){
-            strMessage = "Please enter name"
-        } else if(txtEmail.text!.trimmingCharacters(in: .whitespaces).count <= 0){
-            strMessage = "Please enter email"
-        } else if(!Utils.isEmail(txt: txtEmail.text ?? "")){
-            strMessage = "Please enter valid email"
+            strMessage = "Please enter wakala name"
         } else if(txtMobileNumber.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter mobile number"
         } else if(txtbank.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please select bank"
+        }else if(txtbeneficiaryName.text!.trimmingCharacters(in: .whitespaces).count <= 0){
+            strMessage = "Please enter beneficiary Name"
         } else if(txtBankaccoiunt.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter bank account number"
-        } else if(txtCity.text!.trimmingCharacters(in: .whitespaces).count <= 0){
-            strMessage = "Please select City"
-        } else if(txtPin.text!.trimmingCharacters(in: .whitespaces).count <= 0){
-            strMessage = "Please enter PIN"
         } else if(txtContactPerson.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter contact person"
         } else if(txtContactNumber.text!.trimmingCharacters(in: .whitespaces).count <= 0){
             strMessage = "Please enter conatct number"
-        } else if(txtLoaction.text!.trimmingCharacters(in: .whitespaces).count <= 0){
-            strMessage = "Please enter location"
-        } else if(txtbeneficiaryName.text!.trimmingCharacters(in: .whitespaces).count <= 0){
-            strMessage = "Please enter Beneficiary Name"
+        }else if(txtCity.text!.trimmingCharacters(in: .whitespaces).count <= 0){
+            strMessage = "Please select city"
+        }  else if(txtLoaction.text!.trimmingCharacters(in: .whitespaces).count <= 0){
+            strMessage = "Please enter street address"
+        }else if(txtPin.text!.trimmingCharacters(in: .whitespaces).count <= 0){
+            strMessage = "Please enter PIN"
+        } else if(txtPin.text!.trimmingCharacters(in: .whitespaces).count < 4){
+            strMessage = "Pin should be minimum 4 and maximum 8 digits"
+        }
+        
+       if(txtEmail.text!.trimmingCharacters(in: .whitespaces).count > 0){
+            if(!Utils.isEmail(txt: txtEmail.text ?? "")){
+                strMessage = "Please enter valid email"
+            }
         }
         
         if(strMessage.count > 0){
@@ -201,8 +213,14 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     }
     
     func showProceedAlert ()  {
+         var strMessage = String()
+        if(txtEmail.text!.trimmingCharacters(in: .whitespaces).count > 0){
+             strMessage = "Name: \(txtName.text ?? "")\nEmail: \(txtEmail.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nCity: \(txtCity.text ?? "")\nPIN: \(txtPin.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nLocation: \(txtLoaction.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")"
+        } else{
+             strMessage = "Name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nCity: \(txtCity.text ?? "")\nPIN: \(txtPin.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nLocation: \(txtLoaction.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")"
+        }
    
-        let strMessage = "Name: \(txtName.text ?? "")\nEmail: \(txtEmail.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nCity: \(txtCity.text ?? "")\nPIN: \(txtPin.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nLocation: \(txtLoaction.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")"
+        
        
         let alert = UIAlertController(title: "Confirm", message:strMessage, preferredStyle: .alert)
         

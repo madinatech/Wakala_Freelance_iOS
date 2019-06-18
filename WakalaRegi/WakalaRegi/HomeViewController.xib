@@ -65,7 +65,7 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="tintColor" red="0.0" green="0.43529411759999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="Add"/>
+                    <state key="normal" title="Register New Wakala"/>
                     <connections>
                         <action selector="addClicked:" destination="-1" eventType="touchUpInside" id="73w-85-Bgk"/>
                     </connections>
