@@ -17,8 +17,8 @@ class LoginViewController: UIViewController , NVActivityIndicatorViewable, UITex
     override func viewDidLoad() {
         super.viewDidLoad()
         txtUsername.becomeFirstResponder()
-        txtUsername.text = "0123123123"
-        txtPassword.text = "123456"
+//        txtUsername.text = "0123123123"
+//        txtPassword.text = "0000"
     }
     
     @IBAction func loginClicked(_ sender: Any) {

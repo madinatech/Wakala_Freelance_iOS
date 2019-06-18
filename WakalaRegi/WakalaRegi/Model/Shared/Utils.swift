@@ -47,8 +47,7 @@ class Utils: NSObject {
         let numberTest = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
         if numberTest.evaluate(with: number) == true {
             return true
-        }
-        else {
+        } else {
             return false
         }
     }
@@ -64,10 +63,8 @@ class Utils: NSObject {
         let numberRegEx = "[0-9]{1,10}"
         let numberTest = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
         if numberTest.evaluate(with: number) == true {
-            
             return true
-        }
-        else {
+        } else {
             return false
         }
     }
@@ -81,52 +78,12 @@ class Utils: NSObject {
         dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"
         return dateFormatter.string(from: date)
     }
-    
-    class func getDateFromDatetime(_ dateString : String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let date = dateFormatter.date(from: dateString)
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
-        
-        let Date24 = dateFormatter.string(from: date!)
-        var currentDate = UTCToLocal(date: Date24)
-        if(date == nil) {
-            currentDate = ""
-        }
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        let date1 : Date = dateFormatter.date (from: currentDate)!
-        
-        
-     
-        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm a"
-        return dateFormatter.string(from: date1)
-        
-//        return date1!
-    }
-    
-    class func UTCToLocal(date:String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        let dt = dateFormatter.date(from: date)
-        //dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm a"
-        
-        return dateFormatter.string(from: dt!)
-    }
-    
-    
+
     class func setBottomBorderForTextField(txtField: UITextField) {
         let border = CALayer()
         let width = CGFloat(1.0)
         border.borderColor = UIColor.white.cgColor
         border.frame = CGRect(x: 0, y: txtField.frame.size.height - width, width:  txtField.frame.size.width, height: txtField.frame.size.height)
-        
         border.borderWidth = width
         txtField.layer.addSublayer(border)
         txtField.layer.masksToBounds = true
@@ -202,8 +159,6 @@ class Utils: NSObject {
     }
     
     class func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-        //let scale = newWidth / image.size.width
-        //let newHeight = image.size.height * scale
         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newWidth))
         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newWidth))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -316,7 +271,6 @@ extension UIDevice {
             sysctlbyname("hw.machine", &machine, &size, nil, 0)
             modelIdentifier = String(cString: machine)
         }
-        
         return modelIdentifier == "iPhone10,3" || modelIdentifier == "iPhone10,6"
     }
     
@@ -325,129 +279,3 @@ extension UIDevice {
     }
 }
 
-//extension UIView {
-//
-//    func addTopBorder(_ color: UIColor, height: CGFloat) {
-//        let border = UIView()
-//        border.backgroundColor = color
-//        border.translatesAutoresizingMaskIntoConstraints = false
-//        self.addSubview(border)
-//        border.addConstraint(NSLayoutConstraint(item: border,
-//                                                attribute: NSLayoutAttribute.height,
-//                                                relatedBy: NSLayoutRelation.equal,
-//                                                toItem: nil,
-//                                                attribute: NSLayoutAttribute.height,
-//                                                multiplier: 1, constant: height))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.top,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.top,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.leading,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.leading,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.trailing,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.trailing,
-//                                              multiplier: 1, constant: 0))
-//    }
-//
-//    func addBottomBorder(_ color: UIColor, height: CGFloat) {
-//        let border = UIView()
-//        border.backgroundColor = color
-//        border.translatesAutoresizingMaskIntoConstraints = false
-//        self.addSubview(border)
-//        border.addConstraint(NSLayoutConstraint(item: border,
-//                                                attribute: NSLayoutAttribute.height,
-//                                                relatedBy: NSLayoutRelation.equal,
-//                                                toItem: nil,
-//                                                attribute: NSLayoutAttribute.height,
-//                                                multiplier: 1, constant: height))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.bottom,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.bottom,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.leading,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.leading,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.trailing,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.trailing,
-//                                              multiplier: 1, constant: 0))
-//    }
-//
-//    func addLeftBorder(_ color: UIColor, width: CGFloat) {
-//        let border = UIView()
-//        border.backgroundColor = color
-//        border.translatesAutoresizingMaskIntoConstraints = false
-//        self.addSubview(border)
-//        border.addConstraint(NSLayoutConstraint(item: border,
-//                                                attribute: NSLayoutAttribute.width,
-//                                                relatedBy: NSLayoutRelation.equal,
-//                                                toItem: nil,
-//                                                attribute: NSLayoutAttribute.width,
-//                                                multiplier: 1, constant: width))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.leading,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.leading,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.bottom,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.bottom,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.top,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.top,
-//                                              multiplier: 1, constant: 0))
-//    }
-//
-//    func addRightBorder(_ color: UIColor, width: CGFloat) {
-//        let border = UIView()
-//        border.backgroundColor = color
-//        border.translatesAutoresizingMaskIntoConstraints = false
-//        self.addSubview(border)
-//        border.addConstraint(NSLayoutConstraint(item: border,
-//                                                attribute: NSLayoutAttribute.width,
-//                                                relatedBy: NSLayoutRelation.equal,
-//                                                toItem: nil,
-//                                                attribute: NSLayoutAttribute.width,
-//                                                multiplier: 1, constant: width))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.trailing,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.trailing,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.bottom,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.bottom,
-//                                              multiplier: 1, constant: 0))
-//        self.addConstraint(NSLayoutConstraint(item: border,
-//                                              attribute: NSLayoutAttribute.top,
-//                                              relatedBy: NSLayoutRelation.equal,
-//                                              toItem: self,
-//                                              attribute: NSLayoutAttribute.top,
-//                                              multiplier: 1, constant: 0))
-//    }
-//}

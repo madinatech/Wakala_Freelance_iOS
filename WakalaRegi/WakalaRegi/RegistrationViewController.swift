@@ -125,7 +125,7 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     func openCamera(){
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
             imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = true
+            imagePicker.allowsEditing = false
             imagePicker.delegate = self
             self.present(imagePicker, animated: true, completion: nil)
         } else{
@@ -135,7 +135,7 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     
     func openGallary() {
         imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
     }
@@ -222,9 +222,9 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     func showProceedAlert ()  {
          var strMessage = String()
         if(txtEmail.text!.trimmingCharacters(in: .whitespaces).count > 0){
-             strMessage = "Name: \(txtName.text ?? "")\nEmail: \(txtEmail.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nCity: \(txtCity.text ?? "")\nPIN: \(txtPin.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nLocation: \(txtLoaction.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")"
+             strMessage = "Name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nEmail: \(txtEmail.text ?? "")\nBank: \(txtbank.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nCity: \(txtCity.text ?? "")\nStreet address: \(txtLoaction.text ?? "")"
         } else{
-             strMessage = "Name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nCity: \(txtCity.text ?? "")\nPIN: \(txtPin.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nLocation: \(txtLoaction.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")"
+             strMessage = "Name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nCity: \(txtCity.text ?? "")\nStreet address: \(txtLoaction.text ?? "")"
         }
    
         
@@ -308,6 +308,9 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     }
     
     @IBAction func cityClicked(_ sender: Any) {
+        if(cityArray.count <= 0){
+            return
+        }
         var cityName = [String]()
         for city in cityArray{
             cityName.append(city.city_name ?? "")
@@ -323,6 +326,9 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
         }, origin: sender)
     }
     @IBAction func bankClciked(_ sender: Any) {
+        if(bankArray.count <= 0){
+            return
+        }
         var bankName = [String]()
         for bank in bankArray{
             bankName.append(bank.bank_name ?? "")
@@ -375,13 +381,13 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
             return false
         }
         if textField == txtPin {
-            let maxLength = 6
+            let maxLength = 8
             let currentString: NSString = textField.text! as NSString
             let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
             return newString.length <= maxLength
         }
         if textField == txtConfirmPin {
-            let maxLength = 6
+            let maxLength = 8
             let currentString: NSString = textField.text! as NSString
             let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
             return newString.length <= maxLength
