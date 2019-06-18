@@ -380,6 +380,12 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
             let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
             return newString.length <= maxLength
         }
+        if textField == txtConfirmPin {
+            let maxLength = 6
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
         return true
     }
 }

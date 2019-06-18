@@ -47,7 +47,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell?.selectionStyle = .none
         let wakalList = wakalaListArray[indexPath.row]
         cell?.lblTitle.text = wakalList.name
-        cell?.lblDate.text = Utils.getDatetime(wakalList.created_Date!)
+        if(wakalList.created_Date != nil){
+             cell?.lblDate.text = Utils.getDatetime(wakalList.created_Date!)
+        } else{
+             cell?.lblDate.text = ""
+        }
+       
         cell?.btnView.tag = indexPath.row
         cell?.btnView.addTarget(self, action: #selector(viewClicked(_:)), for: .touchUpInside)
         return cell!

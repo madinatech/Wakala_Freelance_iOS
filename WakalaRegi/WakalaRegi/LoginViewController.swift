@@ -19,7 +19,6 @@ class LoginViewController: UIViewController , NVActivityIndicatorViewable, UITex
         txtUsername.becomeFirstResponder()
         txtUsername.text = "0123123123"
         txtPassword.text = "123456"
-        
     }
     
     @IBAction func loginClicked(_ sender: Any) {
