@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WakalaRegi/RegistrationViewController.swift"
-            timestampString = "582619542.03544"
+            timestampString = "582622186.204777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "cityClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
