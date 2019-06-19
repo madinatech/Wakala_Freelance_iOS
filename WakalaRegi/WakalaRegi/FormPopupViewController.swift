@@ -23,7 +23,7 @@ class FormPopupViewController: UIViewController , UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 11
+        return 10
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -40,38 +40,35 @@ class FormPopupViewController: UIViewController , UITableViewDelegate, UITableVi
         cell?.selectionStyle = .none
         
         if(indexPath.row == 0){
-            cell?.lblTitle.text = "Name"
+            cell?.lblTitle.text = "Wakala name"
             cell?.lblValue.text = wakala.name
         } else if(indexPath.row == 1){
-            cell?.lblTitle.text = "Email"
-            cell?.lblValue.text = wakala.email
-        } else if(indexPath.row == 2){
             cell?.lblTitle.text = "Mobile number"
             cell?.lblValue.text = wakala.mobile_number
+        } else if(indexPath.row == 2){
+            cell?.lblTitle.text = "Email ID"
+            cell?.lblValue.text = wakala.email
         } else if(indexPath.row == 3){
             cell?.lblTitle.text = "Bank name"
             cell?.lblValue.text = wakala.bank_name
         } else if(indexPath.row == 4){
-            cell?.lblTitle.text = "Bank account number"
-            cell?.lblValue.text = wakala.bank_account_number
-        } else if(indexPath.row == 5){
             cell?.lblTitle.text = "Beneficiary name"
             cell?.lblValue.text = wakala.beneficiary_name
+        } else if(indexPath.row == 5){
+            cell?.lblTitle.text = "Bank account number"
+            cell?.lblValue.text = wakala.bank_account_number
         } else if(indexPath.row == 6){
+            cell?.lblTitle.text = "Contact person"
+            cell?.lblValue.text = wakala.contact_person
+        } else if(indexPath.row == 7){
+            cell?.lblTitle.text = "Contact number"
+            cell?.lblValue.text = wakala.contact_number
+        } else if(indexPath.row == 8){
             cell?.lblTitle.text = "City"
             let city : City = City.getById(wakala.city ?? "")
             cell?.lblValue.text = city.city_name//wakala.city
-        } else if(indexPath.row == 7){
-            cell?.lblTitle.text = "PIN"
-            cell?.lblValue.text = wakala.pin
-        } else if(indexPath.row == 8){
-            cell?.lblTitle.text = "Contact person"
-            cell?.lblValue.text = wakala.contact_person
         } else if(indexPath.row == 9){
-            cell?.lblTitle.text = "Contact number"
-            cell?.lblValue.text = wakala.contact_number
-        } else if(indexPath.row == 10){
-            cell?.lblTitle.text = "Location"
+            cell?.lblTitle.text = "Street address"
             cell?.lblValue.text = wakala.location
         }
 

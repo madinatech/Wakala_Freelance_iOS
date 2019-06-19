@@ -222,13 +222,11 @@ class RegistrationViewController: UIViewController, NVActivityIndicatorViewable,
     func showProceedAlert ()  {
          var strMessage = String()
         if(txtEmail.text!.trimmingCharacters(in: .whitespaces).count > 0){
-             strMessage = "Name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nEmail: \(txtEmail.text ?? "")\nBank: \(txtbank.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nCity: \(txtCity.text ?? "")\nStreet address: \(txtLoaction.text ?? "")"
+             strMessage = "Wakala name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nEmail ID: \(txtEmail.text ?? "")\nBank: \(txtbank.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nCity: \(txtCity.text ?? "")\nStreet address: \(txtLoaction.text ?? "")"
         } else{
-             strMessage = "Name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nCity: \(txtCity.text ?? "")\nStreet address: \(txtLoaction.text ?? "")"
+             strMessage = "Wakala name: \(txtName.text ?? "")\nMobile number: \(txtMobileNumber.text ?? "")\nBank: \(txtbank.text ?? "")\nBeneficiary name: \(txtbeneficiaryName.text ?? "")\nBank account number: \(txtBankaccoiunt.text ?? "")\nContact Person: \(txtContactPerson.text ?? "")\nContact number: \(txtContactNumber.text ?? "")\nCity: \(txtCity.text ?? "")\nStreet address: \(txtLoaction.text ?? "")"
         }
    
-        
-       
         let alert = UIAlertController(title: "Confirm", message:strMessage, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Back", style: UIAlertAction.Style.default, handler: { _ in
