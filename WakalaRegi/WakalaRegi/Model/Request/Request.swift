@@ -348,19 +348,19 @@ class Request: NSObject {
         Alamofire.upload(multipartFormData:{ multipartFormData in
             multipartFormData.append(jsonData, withName: "data")
             if(self.isIdImageData == true){
-                multipartFormData.append(self.idImageData, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
+                multipartFormData.append(self.idImageData, withName: "id_doc", fileName: "image.jpg", mimeType: "image/jpg")
             }
             if(self.isTinImageData == true){
-                multipartFormData.append(self.tinImageData, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
+                multipartFormData.append(self.tinImageData, withName: "tin_doc", fileName: "image.jpg", mimeType: "image/jpg")
             }
             if(self.isLicenceImageData == true){
-                multipartFormData.append(self.licenceImageData, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
+                multipartFormData.append(self.licenceImageData, withName: "license_doc", fileName: "image.jpg", mimeType: "image/jpg")
             }
             if(self.isPermitImageData == true){
-                multipartFormData.append(self.permitImageData, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
+                multipartFormData.append(self.permitImageData, withName: "permit_1_doc", fileName: "image.jpg", mimeType: "image/jpg")
             }
             if(self.isAgreementImageData == true){
-                multipartFormData.append(self.agreementImageData, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
+                multipartFormData.append(self.agreementImageData, withName: "agreement_doc", fileName: "image.jpg", mimeType: "image/jpg")
             }
             
         },
